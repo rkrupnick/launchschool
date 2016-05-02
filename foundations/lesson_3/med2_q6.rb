@@ -6,6 +6,11 @@ munsters = {
   "Marilyn" => { "age" => 23, "gender" => "female"}
 }
 
-munsters.each_pair do |name, details|
-  puts "#{name} is a #{details['age']}"
+def mess_with_demographics(demo_hash)
+  demo_hash.values.each do |family_member|
+    family_member["age"] += 42
+    family_member["gender"] = "other"
+  end
 end
+
+mess_with_demographics(munsters)
